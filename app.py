@@ -27,24 +27,22 @@ elif opcao == "Graficos":
 
     df_masculino = df_tabela[df_tabela["genero"] == "Masculino"]
 
-    fig_linha_masculino = px.line(
+    fig_barra_masculino = px.bar(
         df_masculino,
-        markers=True,
+        barmode="group",
         title="Quantidade de pessoas masculinas com mestrado concluído",
         template="plotly_dark"
     )
-    fig_linha_masculino.update_traces(line_color="#FF6B6B", line_width=3, marker_size=8)
-    fig_linha_masculino.update_xaxes(type="category")
-    st.plotly_chart(fig_linha_masculino, use_container_width=True)
+    fig_barra_masculino.update_xaxes(type="category")
+    st.plotly_chart(fig_barra_masculino, use_container_width=True)
 
     df_feminino = df_tabela[df_tabela["genero"] == "Feminino"]
 
-    fig_linha_feminino = px.line(
+    fig_barra_feminino = px.bar(
         df_feminino,
-        markers=True,
+        barmode="group",
         title="Quantidade de pessoas femininas com mestrado concluído",
         template="plotly_dark"
     )
-    fig_linha_feminino.update_traces(line_color="#FF6B6B", line_width=3, marker_size=8)
-    fig_linha_feminino.update_xaxes(type="category")
-    st.plotly_chart(fig_linha_feminino, use_container_width=True)
+    fig_barra_feminino.update_xaxes(type="category")
+    st.plotly_chart(fig_barra_feminino, use_container_width=True)
